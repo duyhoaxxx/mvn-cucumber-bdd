@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
         plugin = {"pretty",
                 "html:target/site/cucumber-report-default.html", "json:target/site/cucumber.json"},
         snippets = SnippetType.CAMELCASE,
-        tags = "@displayed")
+        tags = "@multiple_param")
 
 
 public class TestRunner {

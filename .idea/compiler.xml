@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="mvn-cucumber-bdd" />
         <module name="MVN_Cucumber_BDD_Framework" />
       </profile>
     </annotationProcessing>
