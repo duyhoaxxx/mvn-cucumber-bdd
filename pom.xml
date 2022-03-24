@@ -11,6 +11,7 @@
     <properties>
         <cucumber.version>6.9.1</cucumber.version>
         <selenium.version>3.141.59</selenium.version>
+        <report.version>3.10.0</report.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>11</maven.compiler.source>
@@ -24,28 +25,27 @@
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-core</artifactId>
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-testng</artifactId>
-            <version>${cucumber.version}</version>
-        </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
+
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -62,7 +62,7 @@
         <dependency>
             <groupId>net.masterthought</groupId>
             <artifactId>cucumber-reporting</artifactId>
-            <version>4.11.2</version>
+            <version>${report.version}</version>
         </dependency>
     </dependencies>
 
@@ -82,7 +82,7 @@
                 <version>2.22.2</version>
                 <configuration>
                     <includes>
-                        <include>**/*/CucumberTestRunner.java</include>
+                        <include>src/test/java/cucumberOptions/TestRunner.java</include>
                     </includes>
                 </configuration>
             </plugin>
@@ -91,7 +91,7 @@
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
-                <version>4.11.2</version>
+                <version>${report.version}</version>
                 <executions>
                     <execution>
                         <id>execution</id>
@@ -100,11 +100,9 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>SELENIUM ONLINE - BANK GURU</projectName>
+                            <projectName>Nopcommerce CUCUMBER Report</projectName>
                             <outputDirectory>${project.build.directory}/site/cucumber-reporting</outputDirectory>
                             <cucumberOutput>${project.build.directory}/site/cucumber.json</cucumberOutput>
-                            <enableFlashCharts>true</enableFlashCharts>
-                            <skippedFails>true</skippedFails>
                         </configuration>
                     </execution>
                 </executions>
